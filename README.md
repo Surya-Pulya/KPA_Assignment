@@ -68,6 +68,51 @@ uvicorn python_test.main:app --reload
 - **Pydantic Validation:**  
   All incoming data is validated using Pydantic schemas.
 
+## Tech Stack Used
+
+- **Python 3.8+**
+- **FastAPI** – Web framework for building APIs
+- **SQLAlchemy** – ORM for database modeling and queries
+- **Pydantic** – Data validation and serialization
+- **SQLite** – Default database (can be swapped for others)
+- **Uvicorn** – ASGI server for running FastAPI
+
+---
+
+## Implemented APIs and Their Descriptions
+
+### 1. **POST /api/forms/bogie-checksheet**
+- **Description:**  
+  Submits a bogie checksheet form with nested bogie details, checksheet, and BMBC checksheet data.
+- **Request Body:**  
+  Expects a JSON matching the `BogieChecksheetRequest` schema, including:
+  - `formNumber` (str)
+  - `inspectionBy` (str)
+  - `inspectionDate` (str)
+  - `bogieDetails` (object)
+  - `bogieChecksheet` (object)
+  - `bmbcChecksheet` (object)
+- **Response:**  
+  Returns a summary dict with `inspectionBy`, `formNumber`, and `inspectionDate`, plus a success message.
+
+---
+
+### 2. **POST /api/forms/wheel-specifications**
+- **Description:**  
+  Submits a wheel specification form with detailed wheel measurement fields.
+- **Request Body:**  
+  Expects a JSON matching the `WheelSpecificationForm` schema, including:
+  - `formNumber` (str)
+  - `submittedBy` (str)
+  - `submittedDate` (str)
+  - `fields` (object with all wheel specification measurements)
+- **Response:**  
+  Returns a summary dict with `formNumber`, `status`, `submittedBy`, and `submittedDate`, plus a success message.
+
+---
+
+**Note:**  
+Both endpoints handle database errors and return HTTP 400 with details if creation fails.
 ---
 
 ## Limitations & Assumptions
