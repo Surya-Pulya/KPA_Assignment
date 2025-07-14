@@ -7,6 +7,8 @@
 This project is a FastAPI-based backend for submitting and storing bogie checksheet forms and wheel specification forms. It uses SQLAlchemy ORM for database interactions and Pydantic for data validation.
 Updated postman collection: https://surya-7134606.postman.co/workspace/17789742-8d98-44a2-8088-794a92a1c964/collection/45153103-06c29d34-1f52-4e94-9cf1-b370da1815da?action=share&source=copy-link&creator=45153103
 
+Project demo: https://drive.google.com/file/d/1YQJMbwWXsl5CAgXMuNGfH9uHED5gH8Lb/view?usp=drive_link
+
 ## Setup Instructions
 ### 1. Clone the Repository
 
